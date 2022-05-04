@@ -1,0 +1,38 @@
+{
+  "name": "waxp-erc20",
+  "version": "1.0.0",
+  "description": "An `ERC20` standard token for WAXP",
+  "scripts": {
+    "compile": "npx oz compile",
+    "test": "mocha --exit --recursive test",
+    "test-chain": "npx ganache-cli --deterministic",
+    "accounts": "npx oz accounts",
+    "balance": "npx oz balance",
+    "deploy": "npx oz deploy",
+    "interact": "npx oz send-tx",
+    "upgrade": "npx oz upgrade",
+    "change-owner": "node utils/owner.js",
+    "send-funds": "node utils/sendFunds.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/worldwide-asset-exchange/waxp-erc20.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/worldwide-asset-exchange/waxp-erc20/issues"
+  },
+  "homepage": "https://github.com/worldwide-asset-exchange/waxp-erc20#readme",
+  "dependencies": {
+    "@openzeppelin/cli": "^2.8.2",
+    "@openzeppelin/contracts-ethereum-package": "^3.0.0",
+    "@openzeppelin/test-environment": "^0.1.9",
+    "@openzeppelin/test-helpers": "^0.5.15",
+    "@truffle/hdwallet-provider": "^2.0.8",
+    "chai": "^4.3.6",
+    "dotenv": "^16.0.0",
+    "mocha": "^10.0.0",
+    "truffle-ledger-provider": "^1.0.3"
+  }
+}
