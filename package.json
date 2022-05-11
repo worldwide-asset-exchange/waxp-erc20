@@ -3,14 +3,9 @@
   "version": "1.0.0",
   "description": "An `ERC20` standard token for WAXP",
   "scripts": {
-    "compile": "npx oz compile",
+    "compile": "npx truffle compile",
     "test": "mocha --exit --recursive test",
     "test-chain": "npx ganache-cli --deterministic",
-    "accounts": "npx oz accounts",
-    "balance": "npx oz balance",
-    "deploy": "npx oz deploy",
-    "interact": "npx oz send-tx",
-    "upgrade": "npx oz upgrade",
     "change-owner": "node utils/owner.js",
     "send-funds": "node utils/sendFunds.js"
   },
@@ -34,5 +29,9 @@
     "dotenv": "^16.0.0",
     "mocha": "^10.0.0",
     "truffle-ledger-provider": "^1.0.3"
+  },
+  "devDependencies": {
+    "@openzeppelin/truffle-upgrades": "^1.15.0",
+    "truffle": "^5.5.13"
   }
 }

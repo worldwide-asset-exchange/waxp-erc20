@@ -1,0 +1,45 @@
+{
+  "networks": {
+    "mainnet": {
+      "proxies": {
+        "waxp-erc20/WAXPERC20UpgradeSafe": [
+          {
+            "address": "0x2FdFd5FC7a0Fa6E08DE45262341Ca1C6AED65Eb8",
+            "version": "1.0.0",
+            "implementation": "0xD9223bb3CfE29eA64405820Bd16BB452146aA573",
+            "admin": "0xeCc7F2cD0D31E36565C02bCb89c3Eda43f42d5BC",
+            "kind": "Upgradeable"
+          }
+        ]
+      }
+    },
+    "rinkeby": {
+      "proxies": {
+        "waxp-erc20/WAXPERC20UpgradeSafe": [
+          {
+            "address": "0x0de41b96376f7AaFf671BE23c7881c695a0d161D",
+            "version": "1.0.0",
+            "implementation": "0x1dcaeeE7aE71F9144CBC2e2e5D860394Cdb1BFA0",
+            "admin": "0x319EeC7bdAd9EbAC65DAd006aCBE39d5b9832ef6",
+            "kind": "Upgradeable"
+          }
+        ]
+      }
+    }
+  },
+  "compiler": {
+    "compilerSettings": {
+      "optimizer": {
+        "enabled": false,
+        "runs": "200"
+      }
+    },
+    "typechain": {
+      "enabled": false
+    },
+    "manager": "openzeppelin",
+    "solcVersion": "0.6.12",
+    "artifactsDir": "build/contracts",
+    "contractsDir": "contracts"
+  }
+}

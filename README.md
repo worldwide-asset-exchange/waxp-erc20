@@ -51,3 +51,65 @@ Note: see this GH thread to better understand the ownership vs admin roles in th
 * The Proxy is a contract that delegates calls to a logic contract, probably the one you developed. The proxy address is the one you provide to your users.
 * The Owner in this context it is the account you have used to create a proxy (i.e., the one specified with the --from flag or a default account), who is the owner of the ProxyAdmin (using openzeppelin-solidity Ownable contract), but not the admin of the Proxy (because, as said before, the default admin of the Proxy will be the ProxyAdmin.
 * This mean that when you use the zos set-admin command, you will be changing the admin of a Proxy, from the ProxyAdmin to any other account you provide. This is really dangerous and you should basically never do this. No idea why this is a useful command. Whereas changing the owner of the proxyadmin contract is useful because that user controls upgrades so you would want to secure that with an offline account
+
+### Truffle deploy and upgrade
+
+#### Migrate from OpenZeppelin CLI to truffle
+
+Reference: https://docs.openzeppelin.com/upgrades-plugins/1.x/migrate-from-cli
+
+#### Deploy new upgradeable contract
+
+- create deployment script `migrations/1_deploy.js`
+
+```javascript
+const { deployProxy } = require('@openzeppelin/truffle-upgrades');
+
+const WAXPERC20UpgradeSafe = artifacts.require('WAXPERC20UpgradeSafe');
+
+module.exports = async function (deployer) {
+  const instance = await deployProxy(WAXPERC20UpgradeSafe, [process.env.ESCROW_ADDRESS], { deployer });
+  console.log('Deployed', instance.address);
+};
+```
+
+- run truffle migration:
+
+```bash
+MNEMONIC="YOUR MNEMONIC" PROJECT_ID="YOUR PROJECT ID" npx truffle migrate --network rinkeby
+```
+
+#### Upgrade contract
+
+- create upgrade script `migrations/2_upgrade.js`
+
+```javascript
+const { upgradeProxy } = require('@openzeppelin/truffle-upgrades');
+const OZ_SDK_EXPORT = require("../openzeppelin-cli-export.json");
+
+const WAXPERC20UpgradeSafe = artifacts.require('WAXPERC20UpgradeSafe');
+
+module.exports = async function (deployer) {
+  const [ WAXPERC20 ] = OZ_SDK_EXPORT.networks[deployer.network].proxies["waxp-erc20/WAXPERC20UpgradeSafe"];
+  const instance = await upgradeProxy(WAXPERC20.address, WAXPERC20UpgradeSafe, { deployer });
+  console.log("Upgraded", instance.address);
+};
+```
+
+- run truffle migration:
+
+```bash
+MNEMONIC="YOUR MNEMONIC" PROJECT_ID="YOUR PROJECT ID" npx truffle migrate --network rinkeby
+```
+
+#### Interact with contract
+
+```bash
+MNEMONIC="YOUR MNEMONIC" PROJECT_ID="YOUR PROJECT ID" npx truffle console --network rinkeby
+truffle(rinkeby)> let instance = await WAXPERC20UpgradeSafe.deployed()
+truffle(rinkeby)> (await instance.totalSupply()).toString()
+'386482894311326596'
+truffle(rinkeby)> await instance.transfer("0x26e7ef2d05793c6d47c678f1f4b246856236f089", "400000000");
+truffle(rinkeby)> (await instance.balanceOf("0x26e7ef2d05793c6d47c678f1f4b246856236f089")).toString()
+'400000000'
+```
