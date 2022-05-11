@@ -14,7 +14,7 @@ module.exports = {
       port: 8545,
       gas: 5000000,
       gasPrice: 5e9,
-      networkId: '*',
+      network_id: '*',
     },
     rinkeby: {
       provider: () => {
@@ -25,8 +25,9 @@ module.exports = {
           mnemonic, `https://rinkeby.infura.io/v3/${projectId}`
         )
       },
-      networkId: 4,
-      gasPrice: 10e9
+      network_id: 4,
+      gasPrice: 10e9,
+      skipDryRun: true
     },
     ropsten: {
       provider: () => {
@@ -37,8 +38,9 @@ module.exports = {
           mnemonic, `https://ropsten.infura.io/v3/${projectId}`
         )
       },
-      networkId: 3,
-      gasPrice: 10e9
+      network_id: 3,
+      gasPrice: 10e9,
+      skipDryRun: true
     },
     mainnet: {
       provider: () => {
@@ -49,20 +51,27 @@ module.exports = {
           mnemonic, `https://mainnet.infura.io/v3/${projectId}`
         )
       },
-      networkId: 1,
-      gasPrice: 42e9
+      network_id: 1,
+      gasPrice: 42e9,
+      skipDryRun: true
     },
-    ropsten: {
-      provider: () => {
-        require('dotenv').config({path: '.env.ropsten'});
-        const projectId = requireEnvVar('PROJECT_ID', 'Infura project id');
-        const mnemonic = requireEnvVar('MNEMONIC', 'HD Wallet mnemonic for deployment');
-        return new HDWalletProvider(
-          mnemonic, `https://ropsten.infura.io/v3/${projectId}`
-        )
+  },
+
+  // Set default mocha options here, use special reporters etc.
+  mocha: {
+    // timeout: 100000
+  },
+
+  compilers: {
+    solc: {
+      version: "0.6.12",
+      docker: false,
+      settings: {
+       optimizer: {
+         enabled: false,
+         runs: 200
+       },
       },
-      networkId: 3,
-      gasPrice: 10e10
-    }
+    },
   },
 };
