@@ -8,14 +8,14 @@ function requireEnvVar(envVar, description) {
 
 module.exports = {
   networks: {
-    development: {
-      protocol: 'http',
-      host: process.env['ETHEREUM_HOST'] || 'localhost',
-      port: 8545,
-      gas: 5000000,
-      gasPrice: 5e9,
-      network_id: '*',
-    },
+    // development: {
+    //   protocol: 'http',
+    //   host: process.env['ETHEREUM_HOST'] || 'localhost',
+    //   port: 9545,
+    //   gas: 5000000,
+    //   gasPrice: 5e9,
+    //   network_id: '*',
+    // },
     rinkeby: {
       provider: () => {
         require('dotenv').config({path: '.env.rinkeby'});
@@ -61,6 +61,8 @@ module.exports = {
   mocha: {
     // timeout: 100000
   },
+
+  plugins: ["solidity-coverage"],
 
   compilers: {
     solc: {

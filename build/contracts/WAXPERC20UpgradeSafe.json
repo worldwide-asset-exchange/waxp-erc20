@@ -2773,7 +2773,7 @@
     }
   },
   "schemaVersion": "3.4.7",
-  "updatedAt": "2022-05-11T09:18:56.137Z",
+  "updatedAt": "2022-05-18T09:39:08.038Z",
   "devdoc": {
     "details": "Vanilla upgradeable {ERC20} \"WAXP\" token:",
     "kind": "dev",
