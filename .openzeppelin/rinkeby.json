@@ -1,88 +1,94 @@
 {
   "manifestVersion": "3.2",
   "admin": {
-    "address": "0x319EeC7bdAd9EbAC65DAd006aCBE39d5b9832ef6"
+    "address": "0x537258b250eD06975703588404435cd71Ae98c3B",
+    "txHash": "0x94294a1aabe22b2229bb2f3767ad7cf5456b84da8c4f57f0a1f5aee2a7480dae"
   },
   "proxies": [
     {
-      "address": "0x0de41b96376f7AaFf671BE23c7881c695a0d161D",
+      "address": "0xFC85cbF9137a89C647572FfE199b72a85f1Dd8e3",
+      "txHash": "0x6242bc7def5f4c8c9cc6d0d5a4824c3e91a70e1933e845ef5aeedf6ee4e94eec",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "a25e6eaec68a6194ceceb449e6f0da9691ad7aefe18d02ff00be9c758221840e": {
-      "address": "0x1dcaeeE7aE71F9144CBC2e2e5D860394Cdb1BFA0",
+    "e92d20afe4c45b77498f9ed23e55852c17c6ed00f0d7fd16c998b68a4577ef62": {
+      "address": "0x27F588C92701390e8f1aeff9A922C9e0C2d8aD64",
+      "txHash": "0x7b81aaf55f879753d6d3b0852be75a32d48a6d26e8bc883427c4e3db7d99270e",
       "layout": {
         "storage": [
           {
             "contract": "Initializable",
-            "label": "initialized",
-            "type": "t_bool"
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
           },
           {
             "contract": "Initializable",
-            "label": "initializing",
-            "type": "t_bool"
+            "label": "_initializing",
+            "type": "t_bool",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
           },
           {
-            "contract": "Initializable",
-            "label": "______gap",
-            "type": "t_array(t_uint256)50_storage"
-          },
-          {
-            "contract": "ContextUpgradeSafe",
+            "contract": "ContextUpgradeable",
             "label": "__gap",
-            "type": "t_array(t_uint256)50_storage"
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/utils/Address.sol:36"
           },
           {
-            "contract": "OwnableUpgradeSafe",
+            "contract": "OwnableUpgradeable",
             "label": "_owner",
-            "type": "t_address"
+            "type": "t_address",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:18"
           },
           {
-            "contract": "OwnableUpgradeSafe",
+            "contract": "OwnableUpgradeable",
             "label": "__gap",
-            "type": "t_array(t_uint256)49_storage"
+            "type": "t_array(t_uint256)49_storage",
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:39"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_balances",
-            "type": "t_mapping(t_address,t_uint256)"
+            "type": "t_mapping(t_address,t_uint256)",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:37"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_allowances",
-            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))"
+            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:39"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_totalSupply",
-            "type": "t_uint256"
+            "type": "t_uint256",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:41"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_name",
-            "type": "t_string_storage"
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:43"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_symbol",
-            "type": "t_string_storage"
+            "type": "t_string_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:44"
           },
           {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_decimals",
-            "type": "t_uint8"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "__gap",
-            "type": "t_array(t_uint256)44_storage"
+            "type": "t_array(t_uint256)45_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:394"
           },
           {
-            "contract": "ERC20BurnableUpgradeSafe",
+            "contract": "ERC20BurnableUpgradeable",
             "label": "__gap",
-            "type": "t_array(t_uint256)50_storage"
+            "type": "t_array(t_uint256)50_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol:51"
           }
         ],
         "types": {
@@ -104,14 +110,14 @@
           "t_string_storage": {
             "label": "string"
           },
-          "t_uint8": {
-            "label": "uint8"
-          },
-          "t_array(t_uint256)44_storage": {
-            "label": "uint256[44]"
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]"
           },
           "t_array(t_uint256)49_storage": {
             "label": "uint256[49]"
+          },
+          "t_uint8": {
+            "label": "uint8"
           },
           "t_bool": {
             "label": "bool"
@@ -119,94 +125,83 @@
         }
       }
     },
-    "307c3fefb899bcc1e89fb3189dc9da6334614b3a2d012b26845c0275b48a091e": {
-      "address": "0x920f88D3DED8F56924ba3C0D18B213eB77D4eAd8",
-      "txHash": "0x17604e87f61c73087b97f0b147b28ba0b9b16667991c7bf2c76baa2bfbda6bbb",
+    "33ac2180b418554edb6b329755266cd17f230fc735308800a9acb16fa753d40a": {
+      "address": "0x175F819D81635917ceA33954a2c188c7bc590D82",
+      "txHash": "0xf48845c70e59b8d8be2a64f7b90ce396ba51141989fdb66ce0a7bc9a6e7d29b3",
       "layout": {
         "storage": [
           {
             "contract": "Initializable",
-            "label": "initialized",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:21"
+            "label": "_initialized",
+            "type": "t_uint8",
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
+            "retypedFrom": "bool"
           },
           {
             "contract": "Initializable",
-            "label": "initializing",
+            "label": "_initializing",
             "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:26"
+            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
           },
           {
-            "contract": "Initializable",
-            "label": "______gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:61"
-          },
-          {
-            "contract": "ContextUpgradeSafe",
+            "contract": "ContextUpgradeable",
             "label": "__gap",
             "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:37"
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/utils/Address.sol:36"
           },
           {
-            "contract": "OwnableUpgradeSafe",
+            "contract": "OwnableUpgradeable",
             "label": "_owner",
             "type": "t_address",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:18"
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:18"
           },
           {
-            "contract": "OwnableUpgradeSafe",
+            "contract": "OwnableUpgradeable",
             "label": "__gap",
             "type": "t_array(t_uint256)49_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:78"
+            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:39"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_balances",
             "type": "t_mapping(t_address,t_uint256)",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:37"
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:37"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_allowances",
             "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:39"
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:39"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_totalSupply",
             "type": "t_uint256",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:41"
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:41"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_name",
             "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:43"
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:43"
           },
           {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "_symbol",
             "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:44"
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:44"
           },
           {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_decimals",
-            "type": "t_uint8",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:45"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
+            "contract": "ERC20Upgradeable",
             "label": "__gap",
-            "type": "t_array(t_uint256)44_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:317"
+            "type": "t_array(t_uint256)45_storage",
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:394"
           },
           {
-            "contract": "ERC20BurnableUpgradeSafe",
+            "contract": "ERC20BurnableUpgradeable",
             "label": "__gap",
             "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20Burnable.sol:50"
+            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol:51"
           }
         ],
         "types": {
@@ -228,138 +223,14 @@
           "t_string_storage": {
             "label": "string"
           },
-          "t_uint8": {
-            "label": "uint8"
-          },
-          "t_array(t_uint256)44_storage": {
-            "label": "uint256[44]"
+          "t_array(t_uint256)45_storage": {
+            "label": "uint256[45]"
           },
           "t_array(t_uint256)49_storage": {
             "label": "uint256[49]"
           },
-          "t_bool": {
-            "label": "bool"
-          }
-        }
-      }
-    },
-    "a6e4c71c1c3a285e9181897a3409f3f01e8027712a194420e56f7fee325eec4c": {
-      "address": "0xE20c180B0e8129b6E4762431d1F506b395aa5180",
-      "txHash": "0x8ef52624fe891f4bfa3b5032f3e2696d9af4061cd6987be1e93bd0ed8bf37074",
-      "layout": {
-        "storage": [
-          {
-            "contract": "Initializable",
-            "label": "initialized",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:21"
-          },
-          {
-            "contract": "Initializable",
-            "label": "initializing",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:26"
-          },
-          {
-            "contract": "Initializable",
-            "label": "______gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/Initializable.sol:61"
-          },
-          {
-            "contract": "ContextUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:37"
-          },
-          {
-            "contract": "OwnableUpgradeSafe",
-            "label": "_owner",
-            "type": "t_address",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:18"
-          },
-          {
-            "contract": "OwnableUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)49_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/access/Ownable.sol:78"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_balances",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:37"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_allowances",
-            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:39"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_totalSupply",
-            "type": "t_uint256",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:41"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_name",
-            "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:43"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_symbol",
-            "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:44"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "_decimals",
-            "type": "t_uint8",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:45"
-          },
-          {
-            "contract": "ERC20UpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)44_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20.sol:317"
-          },
-          {
-            "contract": "ERC20BurnableUpgradeSafe",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/token/ERC20/ERC20Burnable.sol:50"
-          }
-        ],
-        "types": {
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]"
-          },
-          "t_uint256": {
-            "label": "uint256"
-          },
-          "t_mapping(t_address,t_uint256)": {
-            "label": "mapping(address => uint256)"
-          },
-          "t_address": {
-            "label": "address"
-          },
-          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
-            "label": "mapping(address => mapping(address => uint256))"
-          },
-          "t_string_storage": {
-            "label": "string"
-          },
           "t_uint8": {
             "label": "uint8"
-          },
-          "t_array(t_uint256)44_storage": {
-            "label": "uint256[44]"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]"
           },
           "t_bool": {
             "label": "bool"

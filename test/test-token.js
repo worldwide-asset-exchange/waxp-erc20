@@ -25,7 +25,7 @@ contract('WAXPERC20', accounts => {
 
     await truffleAssert.reverts(
       contract.initialize(escrow, { from: escrow }),
-      'Contract instance has already been initialized'
+      'contract is already initialized'
     );
   });
 

@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/worldwide-asset-exchange/waxp-erc20#readme",
   "dependencies": {
-    "@openzeppelin/contracts-ethereum-package": "^3.0.0"
+    "@openzeppelin/contracts-upgradeable": "^4.6.0"
   },
   "devDependencies": {
     "@openzeppelin/truffle-upgrades": "^1.15.0",
