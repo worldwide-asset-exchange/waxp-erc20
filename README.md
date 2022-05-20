@@ -33,6 +33,21 @@ $ npm install
 $ npm run test
 ```
 
+### Test coverage
+
+```
+$ npm run coverage
+
+----------------|----------|----------|----------|----------|----------------|
+File            |  % Stmts | % Branch |  % Funcs |  % Lines |Uncovered Lines |
+----------------|----------|----------|----------|----------|----------------|
+ contracts/     |      100 |      100 |      100 |      100 |                |
+  WAXPERC20.sol |      100 |      100 |      100 |      100 |                |
+----------------|----------|----------|----------|----------|----------------|
+All files       |      100 |      100 |      100 |      100 |                |
+----------------|----------|----------|----------|----------|----------------|
+```
+
 ### Upgrade
 
 You will have to transfer ownership back to a 12-word mnemonic (`npx mnemonics`) controlled address rather than a ledger device as the support for it with deployments is poor. Use the `PROJECT_ID=<infura web3 provider project id> MNEMONIC="<12 word mnemonic> npm run change-owner` command to do so and change fields appropriately in the scripts/owner file to hit the correct new ownership addresses. Realize the proxyAdmin accounts within the owner.js file are correct for rinkeby and mainnent. Once the proxyAdmin wonership is trnasferred to a mnemonic controlled address, use it to upgrade the contract via `PROJECT_ID=<infura web3 provider project id> MNEMONIC="<12 word mnemonic> npm run upgrade`. After the upgrade is complete, return control back to the ledger using the change onwner command. You will have to edit the scripts/owner.js appropriately to do so.
@@ -85,13 +100,13 @@ MNEMONIC="YOUR MNEMONIC" PROJECT_ID="YOUR PROJECT ID" npx truffle migrate --netw
 
 ```javascript
 const { upgradeProxy } = require('@openzeppelin/truffle-upgrades');
-const OZ_SDK_EXPORT = require("../openzeppelin-cli-export.json");
 
 const WAXPERC20UpgradeSafe = artifacts.require('WAXPERC20UpgradeSafe');
+const WAXPERC20UpgradeSafeV2 = artifacts.require('WAXPERC20UpgradeSafeV2');
 
 module.exports = async function (deployer) {
-  const [ WAXPERC20 ] = OZ_SDK_EXPORT.networks[deployer.network].proxies["waxp-erc20/WAXPERC20UpgradeSafe"];
-  const instance = await upgradeProxy(WAXPERC20.address, WAXPERC20UpgradeSafe, { deployer });
+  const existing = await WAXPERC20UpgradeSafe.deployed();
+  const instance = await upgradeProxy(existing.address, WAXPERC20UpgradeSafeV2, { deployer });
   console.log("Upgraded", instance.address);
 };
 ```
