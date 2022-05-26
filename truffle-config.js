@@ -1,5 +1,6 @@
 const HDWalletProvider = require('@truffle/hdwallet-provider');
 const assert = require('assert');
+// require('dotenv').config({path: '.env.mainnet'});
 
 function requireEnvVar(envVar, description) {
   assert(process.env[envVar] !== undefined, `Env var ${envVar} must be present${description ? ' - ' + description : ''}`);
@@ -44,7 +45,6 @@ module.exports = {
     },
     mainnet: {
       provider: () => {
-        require('dotenv').config({path: '.env.mainnet'});
         const projectId = requireEnvVar('PROJECT_ID', 'Infura project id');
         const mnemonic = requireEnvVar('MNEMONIC', 'HD Wallet mnemonic for deployment');
         return new HDWalletProvider(
@@ -53,7 +53,8 @@ module.exports = {
       },
       network_id: 1,
       gasPrice: 42e9,
-      skipDryRun: true
+      skipDryRun: true,
+      gas: 10000000
     },
   },
 
@@ -62,7 +63,11 @@ module.exports = {
     // timeout: 100000
   },
 
-  plugins: ["solidity-coverage"],
+  api_keys: {
+    etherscan: process.env['ETHERSCAN_API_KEY']
+  },
+
+  plugins: ['solidity-coverage', 'truffle-plugin-verify'],
 
   compilers: {
     solc: {
