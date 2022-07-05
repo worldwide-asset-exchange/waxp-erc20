@@ -1,7 +1,6 @@
 const regeneratorRuntime = require('regenerator-runtime');
 const LedgerWalletProvider = require('truffle-ledger-provider');
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const Web3 = require('web3');
 const { setupLoader } = require('@openzeppelin/contract-loader');
 const proxyAbi = JSON.parse(require('./proxyAdminAbi.json').result);
 const assert = require('assert');
