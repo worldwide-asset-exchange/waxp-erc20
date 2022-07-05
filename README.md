@@ -128,3 +128,32 @@ truffle(rinkeby)> await instance.transfer("0x26e7ef2d05793c6d47c678f1f4b24685623
 truffle(rinkeby)> (await instance.balanceOf("0x26e7ef2d05793c6d47c678f1f4b246856236f089")).toString()
 '400000000'
 ```
+
+#### setup swapogwax
+
+1. set old wax token address
+
+```bash
+MNEMONIC="YOUR MNEMONIC" PROJECT_ID="YOUR PROJECT ID" npx truffle console --network rinkeby
+truffle(rinkeby)> let instance = await WAXPERC20UpgradeSafe.deployed()
+truffle(rinkeby)> await instance.setWaxToken("0x3Fc977975c70ffc9d2C2A6aCb3Ea43EEF50d21B3")
+```
+
+2. Transfer amount of WAXP to contract address
+
+```bash
+await instance.transfer("0x1DA0e4b6609eE707379b9f65225c7589B3c8aB94", "1000000000000000")
+```
+
+3. User approve for new WAXP contract to take token in old WAX contract
+
+```bash
+truffle(rinkeby)> const oldWaxToken = await WAXPERC20UpgradeSafe.at("0x3Fc977975c70ffc9d2C2A6aCb3Ea43EEF50d21B3")
+truffle(rinkeby)> await oldWaxToken.approve("0x1DA0e4b6609eE707379b9f65225c7589B3c8aB94", "100000000")
+```
+
+4. Swap WAXP from old contract to new contract
+
+```bash
+truffle(rinkeby)> await instance.swapogwax("1000000000")
+```
