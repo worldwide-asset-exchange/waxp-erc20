@@ -1,0 +1,23 @@
+# Changelog
+
+## v1.1.0
+
+BREAKING CHANGES:
+
+FEATURES:
+- Add the ability to swap 1-1 OG WAX for WAXP
+
+IMPROVEMENTS:
+
+BUG FIXES:
+
+## v1.0.0
+
+BREAKING CHANGES:
+
+FEATURES:
+- Burnable WAXP ERC20 Fungible Token
+
+IMPROVEMENTS:
+
+BUG FIXES:
