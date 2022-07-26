@@ -19,7 +19,6 @@ module.exports = {
     // },
     rinkeby: {
       provider: () => {
-        require('dotenv').config({path: '.env.rinkeby'});
         const projectId = requireEnvVar('PROJECT_ID', 'Infura project id');
         const mnemonic = requireEnvVar('MNEMONIC', 'HD Wallet mnemonic for deployment');
         return new HDWalletProvider(

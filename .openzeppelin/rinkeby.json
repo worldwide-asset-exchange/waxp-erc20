@@ -1,20 +1,20 @@
 {
   "manifestVersion": "3.2",
   "admin": {
-    "address": "0x537258b250eD06975703588404435cd71Ae98c3B",
-    "txHash": "0x94294a1aabe22b2229bb2f3767ad7cf5456b84da8c4f57f0a1f5aee2a7480dae"
+    "address": "0x3405230aF50E80D6D5FE24A00A31a4AcE49EAB1a",
+    "txHash": "0x9daaf5be0083af504ba4b38b8897b35d2021023c843e56b7d4b956d580f829cd"
   },
   "proxies": [
     {
-      "address": "0xFC85cbF9137a89C647572FfE199b72a85f1Dd8e3",
-      "txHash": "0x6242bc7def5f4c8c9cc6d0d5a4824c3e91a70e1933e845ef5aeedf6ee4e94eec",
+      "address": "0xF87721a07c94bC8C66a20De09ed78Fe1084fc1fd",
+      "txHash": "0x0889fbd0cde1237d315f0bd1317c4e672889d709c53fc2ea661db0c1ea093c79",
       "kind": "transparent"
     }
   ],
   "impls": {
-    "e92d20afe4c45b77498f9ed23e55852c17c6ed00f0d7fd16c998b68a4577ef62": {
-      "address": "0x27F588C92701390e8f1aeff9A922C9e0C2d8aD64",
-      "txHash": "0x7b81aaf55f879753d6d3b0852be75a32d48a6d26e8bc883427c4e3db7d99270e",
+    "b698c3db954bcc0a73b2262127e614b6121e84e31b6d769fc35927f855eabcfc": {
+      "address": "0xe9097D48F8274624a632fdeD88f331E827409f57",
+      "txHash": "0x49e7a093c1baa3b3a40bb3eca219f74be4d2df73b1bb3a9ed630dc0e042d5ef1",
       "layout": {
         "storage": [
           {
@@ -89,122 +89,18 @@
             "label": "__gap",
             "type": "t_array(t_uint256)50_storage",
             "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol:51"
+          },
+          {
+            "contract": "WAXPERC20UpgradeSafe",
+            "label": "waxToken",
+            "type": "t_contract(IERC20)1406",
+            "src": "../project:/contracts/WAXPERC20.sol:16"
           }
         ],
         "types": {
-          "t_array(t_uint256)50_storage": {
-            "label": "uint256[50]"
+          "t_contract(IERC20)1406": {
+            "label": "contract IERC20"
           },
-          "t_uint256": {
-            "label": "uint256"
-          },
-          "t_mapping(t_address,t_uint256)": {
-            "label": "mapping(address => uint256)"
-          },
-          "t_address": {
-            "label": "address"
-          },
-          "t_mapping(t_address,t_mapping(t_address,t_uint256))": {
-            "label": "mapping(address => mapping(address => uint256))"
-          },
-          "t_string_storage": {
-            "label": "string"
-          },
-          "t_array(t_uint256)45_storage": {
-            "label": "uint256[45]"
-          },
-          "t_array(t_uint256)49_storage": {
-            "label": "uint256[49]"
-          },
-          "t_uint8": {
-            "label": "uint8"
-          },
-          "t_bool": {
-            "label": "bool"
-          }
-        }
-      }
-    },
-    "33ac2180b418554edb6b329755266cd17f230fc735308800a9acb16fa753d40a": {
-      "address": "0x175F819D81635917ceA33954a2c188c7bc590D82",
-      "txHash": "0xf48845c70e59b8d8be2a64f7b90ce396ba51141989fdb66ce0a7bc9a6e7d29b3",
-      "layout": {
-        "storage": [
-          {
-            "contract": "Initializable",
-            "label": "_initialized",
-            "type": "t_uint8",
-            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:62",
-            "retypedFrom": "bool"
-          },
-          {
-            "contract": "Initializable",
-            "label": "_initializing",
-            "type": "t_bool",
-            "src": "../@openzeppelin/contracts-upgradeable/proxy/utils/Initializable.sol:67"
-          },
-          {
-            "contract": "ContextUpgradeable",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/utils/Address.sol:36"
-          },
-          {
-            "contract": "OwnableUpgradeable",
-            "label": "_owner",
-            "type": "t_address",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:18"
-          },
-          {
-            "contract": "OwnableUpgradeable",
-            "label": "__gap",
-            "type": "t_array(t_uint256)49_storage",
-            "src": "../@openzeppelin/contracts-ethereum-package/contracts/GSN/Context.sol:39"
-          },
-          {
-            "contract": "ERC20Upgradeable",
-            "label": "_balances",
-            "type": "t_mapping(t_address,t_uint256)",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:37"
-          },
-          {
-            "contract": "ERC20Upgradeable",
-            "label": "_allowances",
-            "type": "t_mapping(t_address,t_mapping(t_address,t_uint256))",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:39"
-          },
-          {
-            "contract": "ERC20Upgradeable",
-            "label": "_totalSupply",
-            "type": "t_uint256",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:41"
-          },
-          {
-            "contract": "ERC20Upgradeable",
-            "label": "_name",
-            "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:43"
-          },
-          {
-            "contract": "ERC20Upgradeable",
-            "label": "_symbol",
-            "type": "t_string_storage",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:44"
-          },
-          {
-            "contract": "ERC20Upgradeable",
-            "label": "__gap",
-            "type": "t_array(t_uint256)45_storage",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/ERC20Upgradeable.sol:394"
-          },
-          {
-            "contract": "ERC20BurnableUpgradeable",
-            "label": "__gap",
-            "type": "t_array(t_uint256)50_storage",
-            "src": "../@openzeppelin/contracts-upgradeable/token/ERC20/extensions/ERC20BurnableUpgradeable.sol:51"
-          }
-        ],
-        "types": {
           "t_array(t_uint256)50_storage": {
             "label": "uint256[50]"
           },
