@@ -42,6 +42,18 @@ module.exports = {
       gasPrice: 10e9,
       skipDryRun: true
     },
+    goerli: {
+      provider: () => {
+        const projectId = requireEnvVar('PROJECT_ID', 'Infura project id');
+        const mnemonic = requireEnvVar('MNEMONIC', 'HD Wallet mnemonic for deployment');
+        return new HDWalletProvider(
+          mnemonic, `https://goerli.infura.io/v3/${projectId}`
+        )
+      },
+      network_id: 5,
+      skipDryRun: true,
+      gas: 10000000
+    },
     mainnet: {
       provider: () => {
         const projectId = requireEnvVar('PROJECT_ID', 'Infura project id');
@@ -54,7 +66,7 @@ module.exports = {
       gasPrice: 42e9,
       skipDryRun: true,
       gas: 10000000
-    },
+    }
   },
 
   // Set default mocha options here, use special reporters etc.
