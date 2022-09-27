@@ -79,3 +79,12 @@ Summary
 > Total deployments:   3
 > Final cost:          0.008886960225681102 ETH
 ```
+
+#### setup swapogwax
+
+```bash
+$ truffle console --network goerli
+truffle(goerli)> const instance = await WAXPERC20UpgradeSafe.at("0x8EC63D0803994bA4038A8D8ceDEA16E7280E62B9")
+await instance.setWaxToken("0x232918cc7e02700427449504fde7dad9a5a38693")
+await instance.transfer("0x8EC63D0803994bA4038A8D8ceDEA16E7280E62B9", "100000000000000")
+```
