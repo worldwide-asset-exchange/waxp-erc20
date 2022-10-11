@@ -93,3 +93,94 @@ Verifying proxy implementation at 0x5e31fb91e92fc6e2eda0b9d1fa8648b126f3b184
 Pass - Verified: https://etherscan.io/address/0x2A79324c19Ef2B89Ea98b23BC669B7E7c9f8A517#code
 Successfully verified 1 contract(s).
 ```
+
+
+Upgrade Oct 11, 2022
+---
+
+NOTE: had to comment out the deploy migration body to do the upgrade
+
+```
+aaron@raven:~/dev/projects/wax/waxp-erc20$ npx npx truffle migrate --network mainnet
+
+Compiling your contracts...
+===========================
+> Everything is up to date, there is nothing to compile.
+
+
+Starting migrations...
+======================
+> Network name:    'mainnet'
+> Network id:      1
+> Block gas limit: 30000000 (0x1c9c380)
+
+
+1_deploy.js
+===========
+   -------------------------------------
+   > Total cost:                   0 ETH
+
+
+2_upgrade.js
+============
+
+   Replacing 'WAXPERC20UpgradeSafe'
+   --------------------------------
+   > transaction hash:    0x39a2a4a308f9a92a819a7a498a0c950fadd73d658efbd3333af78f115e525879
+   > Blocks: 2            Seconds: 12
+   > contract address:    0x79f893522C9e1Ea3b7Bf91591c529856a8e90AD0
+   > block number:        15727611
+   > block timestamp:     1665524399
+   > account:             0x4baaf565B911B9f1b7f25AEc6c6eE5B3F15f98d1
+   > balance:             2.15803434
+   > gas used:            2333250 (0x239a42)
+   > gas price:           28 gwei
+   > value sent:          0 ETH
+   > total cost:          0.065331 ETH
+
+Upgraded 0x2A79324c19Ef2B89Ea98b23BC669B7E7c9f8A517
+   > Saving artifacts
+   -------------------------------------
+   > Total cost:            0.065331 ETH
+
+Summary
+=======
+> Total deployments:   1
+> Final cost:          0.065331 ETH
+
+aaron@raven:~/dev/projects/wax/waxp-erc20$ npx npx truffle console --network mainnet
+truffle(mainnet)> let instance = await WAXPERC20UpgradeSafe.deployed()
+undefined
+truffle(mainnet)> await instance.setWaxToken("0x39Bb259F66E1C59d5ABEF88375979b4D20D98022")
+{
+  tx: '0xf7a8181e1a7afdaa54d6ad28a69edc50dfdbd5daccab0ceae837f199c5cdec88',
+  receipt: {
+    blockHash: '0x3b807aa5203015fe75c3c1eb6b01992b5f454b7c2c4b688cbaf1ec3019723974',
+    blockNumber: 15728050,
+    contractAddress: null,
+    cumulativeGasUsed: 2553453,
+    effectiveGasPrice: '0x684ee1800',
+    from: '0x4baaf565b911b9f1b7f25aec6c6ee5b3f15f98d1',
+    gasUsed: 53644,
+    logs: [],
+    logsBloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+    status: true,
+    to: '0x2a79324c19ef2b89ea98b23bc669b7e7c9f8a517',
+    transactionHash: '0xf7a8181e1a7afdaa54d6ad28a69edc50dfdbd5daccab0ceae837f199c5cdec88',
+    transactionIndex: 18,
+    type: '0x0',
+    rawLogs: []
+  },
+  logs: []
+}
+```
+
+Re-Verification Oct 11, 2022
+---
+```
+aaron@raven:~/dev/projects/wax/waxp-erc20$ npx truffle run verify WAXPERC20UpgradeSafe --network mainnet
+Verifying WAXPERC20UpgradeSafe
+Verifying proxy implementation at 0x79f893522c9e1ea3b7bf91591c529856a8e90ad0
+Pass - Verified: https://etherscan.io/address/0x2A79324c19Ef2B89Ea98b23BC669B7E7c9f8A517#code
+Successfully verified 1 contract(s).
+```
